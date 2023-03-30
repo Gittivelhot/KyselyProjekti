@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Questions form</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Question</h1>
+    <form action="#" th:action="@{/savequestion}" th:object=${poll}
+        method="post">
+        <p>
+            Kysymys 1 <input type="text" th:field="${poll.question}" />
+        </p>
+        <div style="clear: both; display: block; height: 10px;"></div>
+
+        <input type="submit" value="Submit" /> <input type="reset"
+            value="Reset" />
+            
+            <a href="/questionlist" class = "btn btn-primary"> Back to polls</a>
+    </form>
+
+</body>
+</html>
