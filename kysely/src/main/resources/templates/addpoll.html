@@ -1,23 +1,23 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Questions form</title>
+<title>Poll form</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Question</h1>
-    <form action="#" th:action="@{/savequestion}" th:object=${poll}
+    <h1>Add poll</h1>
+    <form action="#" th:action="@{/savepoll}" th:object=${poll}
         method="post">
         <p>
-            Kysymys 1 <input type="text" th:field="${poll.question}" />
+            Kysymys <input type="text" th:field="${poll.question}" />
         </p>
         <div style="clear: both; display: block; height: 10px;"></div>
 
-        <input type="submit" value="Submit" /> <input type="reset"
-            value="Reset" />
+        <input type="submit" value="Submit" class = "btn btn-success" /> <input type="reset"
+            value="Reset" class="btn btn-warning" />
             
-            <a href="/questionlist" class = "btn btn-primary"> Back to polls</a>
+            <a href="/polls" class = "btn btn-primary"> Back to polls</a>
     </form>
 
 </body>

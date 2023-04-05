@@ -15,26 +15,26 @@ import hh.ohjelmistoprojekti.kysely.domain.PollRepository;
 @Controller
 public class PollController {
 
+	
 	@Autowired
 	private PollRepository prepository;
 
-	@RequestMapping(value = "/addquestion", method = RequestMethod.GET)
-
+	@RequestMapping(value = "/addpoll", method = RequestMethod.GET)
 	public String getNewPoll(Model model) {
 		model.addAttribute("poll", new Poll());
-		return "addquestion";
+		return "addpoll";
 	}
 
 	@RequestMapping(value = "/savepoll", method = RequestMethod.POST)
 	public String savePoll(@ModelAttribute Poll poll) {
 		prepository.save(poll);
-		return "redirect:/questionlist";
+		return "redirect:/polls";
 	}
 
 	@RequestMapping(value = "/polls", method = RequestMethod.GET)
 	public String getPolls(Model model) {
 		List<Poll> polls = (List<Poll>) prepository.findAll();
 		model.addAttribute("polls", polls);
-		return "questionlist";
+		return "polls";
 	}
 }

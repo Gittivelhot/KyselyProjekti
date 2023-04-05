@@ -10,7 +10,8 @@ public class Poll {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-    private String question,answer;
+    private String question;
+    private String answer;
     
     public Poll() {
 		super();
@@ -18,7 +19,7 @@ public class Poll {
 		this.answer = null;
 	}
     
-	public Poll(String question, String answer, Long id) {
+	public Poll(Long id, String question, String answer) {
 		super();
 		this.question = question;
 		this.answer = answer;

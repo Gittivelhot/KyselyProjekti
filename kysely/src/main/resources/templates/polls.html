@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
-<title>Questions</title>
+<title>Polls</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -9,7 +9,7 @@
 <body>
  <div class="container">
  <div class="col-md-4">
-    <h1>Questions</h1>
+    <h1>Polls</h1>
     </div>
     <div class="col-md-4">
         <h3>Welcome <span sec:authentication="name"></span></h3>
@@ -21,19 +21,17 @@
     <tr>
             <th>Question</th>
             <th>Answer</th>
-            <th></th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="poll : ${polls}">
-            <td th:text="${poll.id}">id</td>
             <td th:text="${poll.question}">question</td>
             <td th:text="${poll.answer}">answer</td>
         </tr>
         </tbody>
     
     </table>
-    <a href="/addquestion" class = "btn btn-primary"> Add new Question</a>
+    <a href="/addpoll" class = "btn btn-primary"> Add new Question</a>
 </div>
 </body>
 </html>
